@@ -1,5 +1,20 @@
 set print thread-events off
+set pagination off
 set auto-load safe-path /
+
+define pac
+  if $argc != 1
+    help pac
+  else
+    print $arg0
+    continue
+  end
+end
+
+document pac
+Print And Continue
+usage: pac <var>
+end
 
 python
 import sys
