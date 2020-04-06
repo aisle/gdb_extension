@@ -16,6 +16,21 @@ Print And Continue
 usage: pac <var>
 end
 
+define pp
+  if $argc != 1
+    help pp
+  else
+    set scheduler-locking on
+    print $arg0
+    set scheduler-locking step
+  end
+end
+
+document pp
+Print in scheduler-locking mode
+usage: pp <var>
+end
+
 python
 import sys
 sys.path.insert(0, '/home/admin/gdb_extension')
